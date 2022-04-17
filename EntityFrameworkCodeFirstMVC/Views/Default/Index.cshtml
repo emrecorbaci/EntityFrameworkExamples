@@ -1,0 +1,32 @@
+﻿@using EntityFrameworkCodeFirstMVC.Models.Classes
+@model List<Category>
+@{
+    Layout = "~/Views/Shared/_LayoutNavBar.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @if (Model != null) {
+
+            foreach (var item in Model)
+            {
+            <div class="row">
+                <div class="col-lg-4">
+                    <input class="form-control" type="text" name="Id" value="@item.Id" style="color:red" />
+                    <input class="form-control" type="text" name="Code" value="@item.Code" />
+                    <input class="form-control" type="text" name="Name" value="@item.Name" />
+                    <input class="form-control" type="text" name="Definition" value="@item.Definition" />
+                </div>
+            </div>
+            }
+        }
+    </div>
+</body>
+</html>
